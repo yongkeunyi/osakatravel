@@ -2,69 +2,70 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Black+Han+Sans&display=swap" rel="stylesheet">
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
     --bg: #0a0a0f;
-    --card: #12121a;
-    --card2: #1a1a26;
+    --card: #13131e;
+    --card2: #1c1c2e;
     --accent1: #ff6b35;
     --accent2: #ffd700;
-    --accent3: #7c3aed;
     --accent4: #06b6d4;
     --text: #f0f0f0;
-    --muted: #888;
-    --border: rgba(255,255,255,0.08);
+    --muted: #999;
+    --border: rgba(255,255,255,0.09);
   }
-  body { background: var(--bg); font-family: 'Noto Sans KR', sans-serif; color: var(--text); min-height: 100vh; }
+  body { background: var(--bg); font-family: 'Noto Sans KR', sans-serif; color: var(--text); }
 
+  /* ── HERO ── */
   .hero {
-    background: linear-gradient(135deg, #0a0a0f 0%, #0a1520 40%, #1a0a2e 100%);
-    padding: 28px 20px 20px;
-    text-align: center;
-    position: relative; overflow: hidden;
+    background: linear-gradient(140deg, #0a0a0f 0%, #0a1520 45%, #1a0a2e 100%);
+    padding: 36px 22px 28px;
+    text-align: center; position: relative; overflow: hidden;
     border-bottom: 1px solid var(--border);
   }
   .hero::before {
     content: ''; position: absolute; inset: 0;
-    background: radial-gradient(ellipse at 20% 50%, rgba(6,182,212,0.12) 0%, transparent 55%),
-                radial-gradient(ellipse at 80% 30%, rgba(255,107,53,0.1) 0%, transparent 50%),
-                radial-gradient(ellipse at 50% 90%, rgba(124,58,237,0.1) 0%, transparent 50%);
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(6,182,212,0.13) 0%, transparent 55%),
+      radial-gradient(ellipse at 80% 30%, rgba(255,107,53,0.1) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 90%, rgba(124,58,237,0.1) 0%, transparent 50%);
     pointer-events: none;
   }
   .hero-badge {
     display: inline-block;
     background: rgba(6,182,212,0.15); border: 1px solid rgba(6,182,212,0.4);
-    color: var(--accent4); font-size: 10px; font-weight: 700;
-    letter-spacing: 2px; text-transform: uppercase;
-    padding: 4px 14px; border-radius: 20px; margin-bottom: 12px;
+    color: var(--accent4); font-size: 13px; font-weight: 700;
+    letter-spacing: 1.5px; padding: 6px 18px; border-radius: 20px; margin-bottom: 16px;
   }
   .hero h1 {
     font-family: 'Black Han Sans', sans-serif;
-    font-size: 28px; line-height: 1.2; margin-bottom: 6px;
+    font-size: 36px; line-height: 1.2; margin-bottom: 10px;
     background: linear-gradient(135deg, #06b6d4 0%, #fff 40%, #ffd700 80%, #ff6b35 100%);
     -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
   }
-  .hero-sub { font-size: 12px; color: var(--muted); margin-bottom: 16px; }
-  .hero-stats { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+  .hero-sub { font-size: 15px; color: var(--muted); margin-bottom: 22px; line-height: 1.7; }
+  .hero-stats { display: flex; justify-content: center; gap: 28px; flex-wrap: wrap; }
   .stat { text-align: center; }
-  .stat-num { font-size: 20px; font-weight: 900; color: var(--accent2); line-height: 1; }
-  .stat-label { font-size: 9px; color: var(--muted); margin-top: 2px; letter-spacing: 0.5px; }
+  .stat-num { font-size: 30px; font-weight: 900; color: var(--accent2); line-height: 1; }
+  .stat-label { font-size: 13px; color: var(--muted); margin-top: 4px; }
 
+  /* ── FLOW BAR ── */
   .flow-bar {
     display: flex; align-items: center; overflow-x: auto; scrollbar-width: none;
-    padding: 14px 16px; gap: 0;
-    background: var(--card); border-bottom: 1px solid var(--border);
+    padding: 16px 14px; background: var(--card); border-bottom: 1px solid var(--border);
   }
   .flow-bar::-webkit-scrollbar { display: none; }
-  .flow-node { display: flex; flex-direction: column; align-items: center; min-width: 60px; cursor: pointer; }
-  .flow-icon { font-size: 20px; margin-bottom: 2px; }
-  .flow-label { font-size: 9px; color: var(--muted); text-align: center; white-space: nowrap; }
-  .flow-label strong { display: block; font-size: 10px; color: var(--text); font-weight: 700; }
-  .flow-arrow { flex: 1; min-width: 16px; height: 1px; background: var(--border); position: relative; margin-top: -14px; }
-  .flow-arrow::after { content: '›'; position: absolute; right: -4px; top: -8px; color: var(--border); font-size: 12px; }
+  .flow-node { display: flex; flex-direction: column; align-items: center; min-width: 64px; cursor: pointer; }
+  .flow-icon { font-size: 22px; margin-bottom: 4px; }
+  .flow-label { font-size: 11px; color: var(--muted); text-align: center; white-space: nowrap; line-height: 1.4; }
+  .flow-label strong { display: block; font-size: 12px; color: var(--text); font-weight: 700; }
+  .flow-arrow { flex: 1; min-width: 12px; height: 1px; background: var(--border); position: relative; margin-top: -18px; }
+  .flow-arrow::after { content: '›'; position: absolute; right: -4px; top: -9px; color: rgba(255,255,255,0.2); font-size: 13px; }
 
+  /* ── TABS ── */
   .tabs {
     display: flex; overflow-x: auto; scrollbar-width: none;
     background: var(--card); border-bottom: 1px solid var(--border);
@@ -72,70 +73,80 @@
   }
   .tabs::-webkit-scrollbar { display: none; }
   .tab {
-    flex: 1; min-width: 62px; padding: 12px 6px;
+    flex: none; min-width: 68px; padding: 14px 8px;
     text-align: center; cursor: pointer;
-    border-bottom: 2px solid transparent;
-    transition: all 0.2s; font-size: 10px; color: var(--muted); font-weight: 500;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s; color: var(--muted); font-weight: 700;
   }
-  .tab.active { color: var(--accent1); border-bottom-color: var(--accent1); background: rgba(255,107,53,0.05); }
-  .tab.cruise-tab.active { color: var(--accent4); border-bottom-color: var(--accent4); background: rgba(6,182,212,0.05); }
-  .tab-icon { font-size: 16px; display: block; margin-bottom: 2px; }
-  .tab-day { font-size: 8px; opacity: 0.6; display: block; }
+  .tab.active { color: var(--accent1); border-bottom-color: var(--accent1); background: rgba(255,107,53,0.06); }
+  .tab.cruise-tab.active { color: var(--accent4); border-bottom-color: var(--accent4); background: rgba(6,182,212,0.06); }
+  .tab-icon { font-size: 20px; display: block; margin-bottom: 4px; }
+  .tab-num { font-size: 15px; display: block; line-height: 1.2; }
+  .tab-sub { font-size: 11px; opacity: 0.65; display: block; margin-top: 2px; }
 
-  .content { display: none; padding: 0 16px 32px; }
+  /* ── CONTENT ── */
+  .content { display: none; padding: 0 18px 44px; }
   .content.active { display: block; }
 
-  .day-header { padding: 18px 0 14px; border-bottom: 1px solid var(--border); margin-bottom: 18px; }
-  .day-tag { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--accent4); margin-bottom: 4px; }
+  /* ── DAY HEADER ── */
+  .day-header { padding: 22px 0 18px; border-bottom: 1px solid var(--border); margin-bottom: 22px; }
+  .day-tag { font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent4); margin-bottom: 8px; }
   .day-tag.cruise-tag { color: #22d3ee; }
-  .day-title { font-family: 'Black Han Sans', sans-serif; font-size: 20px; line-height: 1.25; margin-bottom: 4px; }
-  .day-desc { font-size: 11px; color: var(--muted); line-height: 1.6; }
+  .day-title { font-family: 'Black Han Sans', sans-serif; font-size: 28px; line-height: 1.25; margin-bottom: 8px; }
+  .day-desc { font-size: 15px; color: var(--muted); line-height: 1.75; }
 
+  /* ── CRUISE BANNER ── */
   .cruise-banner {
     background: linear-gradient(135deg, rgba(6,182,212,0.15), rgba(124,58,237,0.1));
     border: 1px solid rgba(6,182,212,0.35);
-    border-radius: 14px; padding: 16px; margin-bottom: 18px;
+    border-radius: 16px; padding: 20px; margin-bottom: 22px;
   }
-  .cruise-banner-head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
-  .cruise-icon-big { font-size: 32px; }
-  .cruise-name { font-size: 14px; font-weight: 700; color: #22d3ee; margin-bottom: 2px; }
-  .cruise-route { font-size: 11px; color: var(--muted); }
-  .cruise-amenities { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
-  .amenity { background: rgba(6,182,212,0.08); border: 1px solid rgba(6,182,212,0.15); border-radius: 8px; padding: 8px 4px; text-align: center; }
-  .amenity-icon { font-size: 16px; display: block; margin-bottom: 2px; }
-  .amenity-name { font-size: 9px; color: #aaa; }
+  .cruise-banner-head { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .cruise-icon-big { font-size: 40px; }
+  .cruise-name { font-size: 18px; font-weight: 700; color: #22d3ee; margin-bottom: 4px; }
+  .cruise-route { font-size: 13px; color: var(--muted); line-height: 1.6; }
+  .cruise-amenities { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .amenity { background: rgba(6,182,212,0.08); border: 1px solid rgba(6,182,212,0.15); border-radius: 10px; padding: 11px 4px; text-align: center; }
+  .amenity-icon { font-size: 20px; display: block; margin-bottom: 5px; }
+  .amenity-name { font-size: 11px; color: #aaa; }
 
+  /* ── PASS BANNER ── */
   .pass-banner {
     background: linear-gradient(135deg, rgba(124,58,237,0.15), rgba(6,182,212,0.08));
     border: 1px solid rgba(124,58,237,0.3);
-    border-radius: 12px; padding: 12px 14px; margin-bottom: 18px;
-    display: flex; align-items: center; gap: 10px;
+    border-radius: 14px; padding: 16px 18px; margin-bottom: 22px;
+    display: flex; align-items: flex-start; gap: 14px;
   }
-  .pass-icon { font-size: 24px; flex-shrink: 0; }
-  .pass-title { font-size: 12px; font-weight: 700; color: #a78bfa; margin-bottom: 2px; }
-  .pass-desc { font-size: 10px; color: var(--muted); line-height: 1.5; }
+  .pass-icon { font-size: 32px; flex-shrink: 0; margin-top: 2px; }
+  .pass-title { font-size: 16px; font-weight: 700; color: #a78bfa; margin-bottom: 5px; }
+  .pass-desc { font-size: 13px; color: var(--muted); line-height: 1.7; }
 
+  /* ── TIMELINE ── */
   .timeline { position: relative; }
   .timeline::before {
-    content: ''; position: absolute; left: 34px; top: 0; bottom: 0; width: 1px;
+    content: ''; position: absolute; left: 40px; top: 0; bottom: 0; width: 1px;
     background: linear-gradient(to bottom, transparent, var(--border) 10%, var(--border) 90%, transparent);
   }
-  .tl-item { display: flex; gap: 14px; margin-bottom: 16px; align-items: flex-start; }
-  .tl-time-col { width: 68px; flex-shrink: 0; text-align: right; padding-top: 5px; }
-  .tl-time { font-size: 10px; font-weight: 700; color: var(--accent2); line-height: 1; }
+  .tl-item { display: flex; gap: 16px; margin-bottom: 20px; align-items: flex-start; }
+  .tl-time-col { width: 80px; flex-shrink: 0; text-align: right; padding-top: 7px; }
+  .tl-time { font-size: 13px; font-weight: 700; color: var(--accent2); line-height: 1; }
   .tl-time.cruise-time { color: #22d3ee; }
   .tl-dot-col { width: 1px; flex-shrink: 0; display: flex; flex-direction: column; align-items: center; }
-  .tl-dot { width: 9px; height: 9px; border-radius: 50%; border: 2px solid var(--accent1); background: var(--bg); margin-top: 7px; flex-shrink: 0; z-index: 1; }
-  .tl-dot.big { width: 13px; height: 13px; background: var(--accent1); border-color: var(--accent1); box-shadow: 0 0 10px rgba(255,107,53,0.5); }
+  .tl-dot { width: 12px; height: 12px; border-radius: 50%; border: 2px solid var(--accent1); background: var(--bg); margin-top: 8px; flex-shrink: 0; z-index: 1; }
+  .tl-dot.big { width: 16px; height: 16px; background: var(--accent1); border-color: var(--accent1); box-shadow: 0 0 12px rgba(255,107,53,0.5); }
   .tl-dot.cruise { border-color: #22d3ee; background: rgba(6,182,212,0.2); box-shadow: 0 0 8px rgba(6,182,212,0.4); }
-  .tl-dot.cruise.big { background: #22d3ee; box-shadow: 0 0 12px rgba(6,182,212,0.6); }
-  .tl-card { flex: 1; background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; transition: transform 0.15s, border-color 0.15s; }
+  .tl-dot.cruise.big { background: #22d3ee; box-shadow: 0 0 14px rgba(6,182,212,0.6); }
+  .tl-dot.gold { border-color: var(--accent2); background: rgba(255,215,0,0.2); box-shadow: 0 0 10px rgba(255,215,0,0.4); }
+  .tl-dot.gold.big { background: var(--accent2); box-shadow: 0 0 14px rgba(255,215,0,0.6); }
+  .tl-card { flex: 1; background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 16px 18px; transition: transform 0.15s, border-color 0.15s; }
   .tl-card:hover { transform: translateX(2px); border-color: rgba(255,107,53,0.25); }
   .tl-card.cruise-card { border-color: rgba(6,182,212,0.2); }
   .tl-card.cruise-card:hover { border-color: rgba(6,182,212,0.4); }
-  .tl-card-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 6px; margin-bottom: 5px; }
-  .tl-card-title { font-size: 13px; font-weight: 700; color: var(--text); line-height: 1.3; }
-  .tl-badge { font-size: 9px; font-weight: 700; padding: 2px 7px; border-radius: 20px; white-space: nowrap; flex-shrink: 0; }
+  .tl-card.gold-card { border-color: rgba(255,215,0,0.2); }
+  .tl-card.gold-card:hover { border-color: rgba(255,215,0,0.4); }
+  .tl-card-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
+  .tl-card-title { font-size: 17px; font-weight: 700; color: var(--text); line-height: 1.35; }
+  .tl-badge { font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 20px; white-space: nowrap; flex-shrink: 0; margin-top: 2px; }
   .badge-orange { background: rgba(255,107,53,0.15); color: #ff8c5a; border: 1px solid rgba(255,107,53,0.3); }
   .badge-yellow { background: rgba(255,215,0,0.12); color: #ffd700; border: 1px solid rgba(255,215,0,0.3); }
   .badge-purple { background: rgba(124,58,237,0.15); color: #a78bfa; border: 1px solid rgba(124,58,237,0.3); }
@@ -143,50 +154,67 @@
   .badge-green { background: rgba(16,185,129,0.12); color: #34d399; border: 1px solid rgba(16,185,129,0.3); }
   .badge-pink { background: rgba(236,72,153,0.12); color: #f472b6; border: 1px solid rgba(236,72,153,0.3); }
   .badge-navy { background: rgba(6,182,212,0.2); color: #67e8f9; border: 1px solid rgba(6,182,212,0.4); }
-  .tl-card-body { font-size: 11px; color: var(--muted); line-height: 1.7; }
-  .tl-card-body strong { color: #ccc; font-weight: 600; }
-  .tl-tips { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 5px; }
-  .tip-chip { font-size: 10px; background: var(--card2); border: 1px solid var(--border); border-radius: 7px; padding: 2px 8px; color: #aaa; }
+  .badge-gold { background: rgba(255,215,0,0.15); color: #ffd700; border: 1px solid rgba(255,215,0,0.4); }
+  .tl-card-body { font-size: 14px; color: var(--muted); line-height: 1.8; }
+  .tl-card-body strong { color: #ddd; font-weight: 600; }
+  .tl-tips { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 7px; }
+  .tip-chip { font-size: 12px; background: var(--card2); border: 1px solid var(--border); border-radius: 8px; padding: 5px 11px; color: #bbb; }
 
-  .food-section { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border); }
-  .section-label { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
-  .food-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; }
-  .food-card { background: var(--card); border: 1px solid var(--border); border-radius: 9px; padding: 9px 6px; text-align: center; }
-  .food-emoji { font-size: 18px; margin-bottom: 3px; display: block; }
-  .food-name { font-size: 10px; font-weight: 600; color: var(--text); margin-bottom: 1px; }
-  .food-loc { font-size: 9px; color: var(--muted); }
+  /* ── FOOD ── */
+  .food-section { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--border); }
+  .section-label { font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+  .food-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .food-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 14px 6px; text-align: center; }
+  .food-emoji { font-size: 26px; margin-bottom: 6px; display: block; }
+  .food-name { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
+  .food-loc { font-size: 11px; color: var(--muted); }
 
-  .hotel-card { background: var(--card2); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; margin-top: 8px; display: flex; gap: 10px; align-items: center; }
-  .hotel-icon { font-size: 28px; flex-shrink: 0; }
-  .hotel-name { font-size: 12px; font-weight: 700; margin-bottom: 2px; }
-  .hotel-area { font-size: 10px; color: var(--muted); }
+  /* ── HOTEL ── */
+  .hotel-card { background: var(--card2); border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px; margin-top: 12px; display: flex; gap: 14px; align-items: center; }
+  .hotel-icon { font-size: 36px; flex-shrink: 0; }
+  .hotel-name { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+  .hotel-area { font-size: 13px; color: var(--muted); }
 
+  /* ── NIGHT DIVIDER ── */
   .night-divider {
-    display: flex; align-items: center; gap: 8px;
-    margin: 4px 0 16px; padding: 8px 12px;
+    display: flex; align-items: center; gap: 12px;
+    margin: 8px 0 20px; padding: 12px 16px;
     background: linear-gradient(135deg, rgba(6,182,212,0.08), rgba(124,58,237,0.06));
     border: 1px solid rgba(6,182,212,0.15);
-    border-radius: 10px; font-size: 10px; color: #67e8f9;
+    border-radius: 12px; font-size: 14px; color: #67e8f9; line-height: 1.5;
   }
-  .night-divider-icon { font-size: 16px; }
+  .night-divider-icon { font-size: 20px; flex-shrink: 0; }
 
-  .scroll-hint { text-align: center; font-size: 10px; color: var(--muted); padding: 8px; letter-spacing: 1px; }
+  /* ── FINAL ── */
+  .final-card {
+    background: linear-gradient(135deg, rgba(255,215,0,0.1), rgba(255,107,53,0.08));
+    border: 1px solid rgba(255,215,0,0.3);
+    border-radius: 18px; padding: 24px;
+    margin-top: 24px; text-align: center;
+  }
+  .final-emoji { font-size: 56px; display: block; margin-bottom: 12px; }
+  .final-title { font-family: 'Black Han Sans', sans-serif; font-size: 26px; color: var(--accent2); margin-bottom: 10px; }
+  .final-desc { font-size: 15px; color: var(--muted); line-height: 1.9; }
+
+  .scroll-hint { text-align: center; font-size: 13px; color: var(--muted); padding: 12px; letter-spacing: 1px; }
 </style>
 </head>
 <body>
 
+<!-- HERO -->
 <div class="hero">
-  <div class="hero-badge">⛴️ 팬스타 미라클 크루즈 왕복 탑승</div>
-  <h1>부산 출항 → 간사이 정복<br>크루즈 1박 × 2회 포함</h1>
-  <p class="hero-sub">2026년 7월 2일(목) 부산 출항 · 전체 5박 6일 (크루즈 2박 + 호텔 3박)</p>
+  <div class="hero-badge">⛴️ 팬스타 미라클 크루즈 왕복</div>
+  <h1>부산 출항<br>간사이 완전 정복!</h1>
+  <p class="hero-sub">2026년 7월 2일(목) 출항<br>크루즈 2박 + 호텔 3박 · 총 5박 6일</p>
   <div class="hero-stats">
     <div class="stat"><div class="stat-num">5</div><div class="stat-label">박 일정</div></div>
-    <div class="stat"><div class="stat-num">2</div><div class="stat-label">크루즈 1박</div></div>
+    <div class="stat"><div class="stat-num">2</div><div class="stat-label">크루즈 박</div></div>
     <div class="stat"><div class="stat-num">3</div><div class="stat-label">호텔 박</div></div>
     <div class="stat"><div class="stat-num">4</div><div class="stat-label">개 도시</div></div>
   </div>
 </div>
 
+<!-- FLOW BAR -->
 <div class="flow-bar">
   <div class="flow-node" onclick="showDay(0)"><span class="flow-icon">⛴️</span><span class="flow-label"><strong>7/2 목</strong>부산 출항</span></div>
   <div class="flow-arrow"></div>
@@ -198,24 +226,50 @@
   <div class="flow-arrow"></div>
   <div class="flow-node" onclick="showDay(3)"><span class="flow-icon">🎡</span><span class="flow-label"><strong>7/5 일</strong>오사카</span></div>
   <div class="flow-arrow"></div>
-  <div class="flow-node" onclick="showDay(4)"><span class="flow-icon">🌊</span><span class="flow-label"><strong>크루즈</strong>1박</span></div>
+  <div class="flow-node" onclick="showDay(4)"><span class="flow-icon">🚢</span><span class="flow-label"><strong>7/6 월</strong>귀국 출항</span></div>
   <div class="flow-arrow"></div>
-  <div class="flow-node" onclick="showDay(4)"><span class="flow-icon">🏠</span><span class="flow-label"><strong>7/7 화</strong>부산 귀항</span></div>
+  <div class="flow-node" onclick="showDay(5)"><span class="flow-icon">🎉</span><span class="flow-label"><strong>7/7 화</strong>부산 귀환</span></div>
 </div>
 
+<!-- TABS -->
 <div class="tabs">
-  <div class="tab cruise-tab active" onclick="showDay(0)"><span class="tab-icon">⛴️</span>크루즈<span class="tab-day">7/2 출항</span></div>
-  <div class="tab" onclick="showDay(1)"><span class="tab-icon">🏯</span>DAY 2<span class="tab-day">히메지·고베</span></div>
-  <div class="tab" onclick="showDay(2)"><span class="tab-icon">⛩️</span>DAY 3<span class="tab-day">교토</span></div>
-  <div class="tab" onclick="showDay(3)"><span class="tab-icon">🎡</span>DAY 4<span class="tab-day">오사카</span></div>
-  <div class="tab cruise-tab" onclick="showDay(4)"><span class="tab-icon">🚢</span>귀국<span class="tab-day">크루즈 1박</span></div>
+  <div class="tab cruise-tab active" onclick="showDay(0)">
+    <span class="tab-icon">⛴️</span>
+    <span class="tab-num">1일째</span>
+    <span class="tab-sub">출항 크루즈</span>
+  </div>
+  <div class="tab" onclick="showDay(1)">
+    <span class="tab-icon">🏯</span>
+    <span class="tab-num">2일째</span>
+    <span class="tab-sub">히메지·고베</span>
+  </div>
+  <div class="tab" onclick="showDay(2)">
+    <span class="tab-icon">⛩️</span>
+    <span class="tab-num">3일째</span>
+    <span class="tab-sub">교토</span>
+  </div>
+  <div class="tab" onclick="showDay(3)">
+    <span class="tab-icon">🎡</span>
+    <span class="tab-num">4일째</span>
+    <span class="tab-sub">오사카</span>
+  </div>
+  <div class="tab cruise-tab" onclick="showDay(4)">
+    <span class="tab-icon">🚢</span>
+    <span class="tab-num">5일째</span>
+    <span class="tab-sub">귀국 크루즈</span>
+  </div>
+  <div class="tab" onclick="showDay(5)">
+    <span class="tab-icon">🎉</span>
+    <span class="tab-num">6일째</span>
+    <span class="tab-sub">부산 귀환</span>
+  </div>
 </div>
 
-<!-- DAY 1: 크루즈 출항 -->
+<!-- ═══ 1일째: 크루즈 출항 ═══ -->
 <div class="content active" id="day0">
   <div class="day-header">
-    <div class="day-tag cruise-tag">DAY 1 · 7월 2일 목요일</div>
-    <div class="day-title">⛴️ 팬스타 미라클 크루즈<br>부산 출항 → 선상 1박!</div>
+    <div class="day-tag cruise-tag">1일째 · 7월 2일 목요일</div>
+    <div class="day-title">⛴️ 팬스타 미라클<br>부산 출항 → 선상 1박!</div>
     <div class="day-desc">배 자체가 여행이다! 뷔페·수영장·야외 포차·카지노까지. 바다 위에서 보내는 설레는 첫 번째 밤.</div>
   </div>
 
@@ -224,18 +278,18 @@
       <div class="cruise-icon-big">🚢</div>
       <div>
         <div class="cruise-name">팬스타 미라클호</div>
-        <div class="cruise-route">부산항 → 오사카항 · 목요일 16:00 출항 · 익일 10:00 도착</div>
+        <div class="cruise-route">부산항 → 오사카항<br>목요일 16:00 출항 · 익일 10:00 도착</div>
       </div>
     </div>
     <div class="cruise-amenities">
-      <div class="amenity"><span class="amenity-icon">🍽️</span><span class="amenity-name">뷔페 석식</span></div>
+      <div class="amenity"><span class="amenity-icon">🍽️</span><span class="amenity-name">뷔페식사</span></div>
       <div class="amenity"><span class="amenity-icon">🏊</span><span class="amenity-name">수영장</span></div>
       <div class="amenity"><span class="amenity-icon">🎰</span><span class="amenity-name">카지노</span></div>
       <div class="amenity"><span class="amenity-icon">🛁</span><span class="amenity-name">사우나</span></div>
       <div class="amenity"><span class="amenity-icon">🏪</span><span class="amenity-name">면세점</span></div>
       <div class="amenity"><span class="amenity-icon">🎤</span><span class="amenity-name">선내공연</span></div>
       <div class="amenity"><span class="amenity-icon">🌅</span><span class="amenity-name">야외포차</span></div>
-      <div class="amenity"><span class="amenity-icon">🛏️</span><span class="amenity-name">객실 숙박</span></div>
+      <div class="amenity"><span class="amenity-icon">🛏️</span><span class="amenity-name">객실숙박</span></div>
     </div>
   </div>
 
@@ -244,8 +298,8 @@
       <div class="tl-time-col"><div class="tl-time cruise-time">13:00</div></div>
       <div class="tl-dot-col"><div class="tl-dot cruise big"></div></div>
       <div class="tl-card cruise-card">
-        <div class="tl-card-head"><div class="tl-card-title">📍 부산항 국제여객터미널 집결</div><div class="tl-badge badge-cyan">집합</div></div>
-        <div class="tl-card-body"><strong>부산 국제여객터미널 3층</strong> 팬스타 카운터. 수화물 수속 14:00~15:00, 출국 수속 14:30~15:30. 출항 2시간 전까지 도착하도록 여유 있게 13시 집결!</div>
+        <div class="tl-card-head"><div class="tl-card-title">📍 부산항 터미널 집결</div><div class="tl-badge badge-cyan">집합</div></div>
+        <div class="tl-card-body"><strong>부산 국제여객터미널 3층</strong> 팬스타 카운터. 수화물 수속 14:00~15:00, 출국 수속 14:30~15:30. 출항 2시간 전까지 도착 필수!</div>
         <div class="tl-tips">
           <span class="tip-chip">🚇 부산역→터미널 택시 10분</span>
           <span class="tip-chip">🎫 여권 + 승선권 필수</span>
@@ -257,7 +311,7 @@
       <div class="tl-dot-col"><div class="tl-dot cruise"></div></div>
       <div class="tl-card cruise-card">
         <div class="tl-card-head"><div class="tl-card-title">🛳️ 승선 완료 · 객실 확인</div><div class="tl-badge badge-navy">승선</div></div>
-        <div class="tl-card-body">객실 배정 후 짐 정리. 갑판 나와 부산항 뷰 감상 & 출항 전 인증샷! 선내 면세점은 출항 후 오픈하니 미리 찜해두기.</div>
+        <div class="tl-card-body">객실 배정 후 짐 정리. 갑판으로 나와 부산항 뷰 감상 & 출항 전 인증샷!</div>
       </div>
     </div>
     <div class="tl-item">
@@ -265,7 +319,7 @@
       <div class="tl-dot-col"><div class="tl-dot cruise big"></div></div>
       <div class="tl-card cruise-card">
         <div class="tl-card-head"><div class="tl-card-title">⚓ 부산항 출항! 현해탄 진입</div><div class="tl-badge badge-cyan">출항</div></div>
-        <div class="tl-card-body">드디어 출항! 갑판에서 부산 야경이 점점 멀어지는 장면은 인생샷 포인트. 7월 석양이 붉게 물드는 황홀한 뷰를 배 위에서 감상.</div>
+        <div class="tl-card-body">드디어 출항! 갑판에서 부산이 멀어지는 장면은 인생샷 포인트. 7월 석양이 붉게 물드는 황홀한 뷰를 배 위에서 감상.</div>
         <div class="tl-tips">
           <span class="tip-chip">📸 선미 갑판이 최고 뷰</span>
           <span class="tip-chip">🌅 7월 일몰 약 19:40</span>
@@ -277,7 +331,7 @@
       <div class="tl-dot-col"><div class="tl-dot cruise"></div></div>
       <div class="tl-card cruise-card">
         <div class="tl-card-head"><div class="tl-card-title">🍽️ 선내 뷔페 석식</div><div class="tl-badge badge-green">포함</div></div>
-        <div class="tl-card-body">승선권에 <strong>석식 포함</strong>! 뷔페 or 정찬식. 신선한 해산물과 한·일식 메뉴. 야외 포차에서 시원한 맥주 한 잔도 필수.</div>
+        <div class="tl-card-body">승선권에 <strong>석식 포함</strong>! 야외 포차에서 바다 보며 시원한 맥주 한 잔도 필수.</div>
       </div>
     </div>
     <div class="tl-item">
@@ -285,7 +339,7 @@
       <div class="tl-dot-col"><div class="tl-dot cruise"></div></div>
       <div class="tl-card cruise-card">
         <div class="tl-card-head"><div class="tl-card-title">🎰 카지노 · 면세점 · 선내 이벤트</div><div class="tl-badge badge-purple">자유시간</div></div>
-        <div class="tl-card-body">카지노에서 소소한 도전, 면세점에서 화장품·주류 쇼핑, 라운지에서 선내 공연 관람. 바 라운지 칵테일로 낭만적인 바다 밤 마무리.</div>
+        <div class="tl-card-body">카지노 소소한 도전, 면세점 화장품·주류 쇼핑, 라운지 선내 공연 관람. 바 라운지 칵테일로 낭만적인 바다 밤 마무리.</div>
       </div>
     </div>
     <div class="tl-item">
@@ -293,21 +347,20 @@
       <div class="tl-dot-col"><div class="tl-dot cruise big"></div></div>
       <div class="tl-card cruise-card">
         <div class="tl-card-head"><div class="tl-card-title">🌊 별 아래 현해탄 야경 · 취침</div><div class="tl-badge badge-navy">선상 1박</div></div>
-        <div class="tl-card-body">갑판에서 탁 트인 바다 위 별 감상 후 취침. 내일 10시 오사카 도착이니 푹 자두기! 파도 소리 자장가로 잠드는 색다른 경험.</div>
+        <div class="tl-card-body">갑판에서 탁 트인 바다 위 별 감상 후 취침. 파도 소리 자장가로 잠드는 색다른 경험!</div>
       </div>
     </div>
   </div>
-
   <div class="night-divider">
     <span class="night-divider-icon">🌙</span>
     <span><strong>선상 1박</strong> — 팬스타 미라클호 객실 (석식 · 조식 포함)</span>
   </div>
 </div>
 
-<!-- DAY 2: 히메지 + 고베 -->
+<!-- ═══ 2일째: 히메지 + 고베 ═══ -->
 <div class="content" id="day1">
   <div class="day-header">
-    <div class="day-tag">DAY 2 · 7월 3일 금요일</div>
+    <div class="day-tag">2일째 · 7월 3일 금요일</div>
     <div class="day-title">🌅 오사카 입항 후<br>히메지 성 + 고베 야경!</div>
     <div class="day-desc">선상 조식 먹고 오사카에 상륙! 간사이패스 1일차로 히메지 → 고베 → 난바까지 하루에 완전 정복.</div>
   </div>
@@ -326,7 +379,7 @@
       <div class="tl-dot-col"><div class="tl-dot cruise"></div></div>
       <div class="tl-card cruise-card">
         <div class="tl-card-head"><div class="tl-card-title">☀️ 선상 조식 뷔페</div><div class="tl-badge badge-green">포함</div></div>
-        <div class="tl-card-body">승선권 포함 <strong>조식 뷔페</strong>. 갑판에서 세토내해 풍경 보며 먹는 아침은 레전드. 오사카 도착까지 갑판 산책으로 여유롭게.</div>
+        <div class="tl-card-body">승선권 포함 <strong>조식 뷔페</strong>! 갑판에서 세토내해 풍경 보며 먹는 아침은 레전드.</div>
       </div>
     </div>
     <div class="tl-item">
@@ -346,7 +399,7 @@
       <div class="tl-dot-col"><div class="tl-dot"></div></div>
       <div class="tl-card">
         <div class="tl-card-head"><div class="tl-card-title">🏯 히메지성 · 세계문화유산</div><div class="tl-badge badge-yellow">세계유산</div></div>
-        <div class="tl-card-body">오사카항 → 히메지역 <strong>약 1시간 20분</strong>. 역에서 도보 15분. 일본 최고의 목조성 "백로성"! 새하얀 자태가 SNS 감성 폭발. 천수각 올라가면 도시 전망 완벽.</div>
+        <div class="tl-card-body">오사카항 → 히메지역 <strong>약 1시간 20분</strong>. 역에서 도보 15분. 일본 최고의 목조성 "백로성"! 천수각 올라가면 도시 전망 완벽.</div>
         <div class="tl-tips">
           <span class="tip-chip">🎟️ 입장료 1,000엔</span>
           <span class="tip-chip">⏱️ 관람 약 1.5시간</span>
@@ -359,15 +412,15 @@
       <div class="tl-dot-col"><div class="tl-dot"></div></div>
       <div class="tl-card">
         <div class="tl-card-head"><div class="tl-card-title">🍱 히메지 점심 · 아나고메시</div><div class="tl-badge badge-orange">맛집</div></div>
-        <div class="tl-card-body">히메지 명물 <strong>아나고메시(붕장어 덮밥)</strong> or 역 에키소바로 가볍게. 이동 많은 날이니 빠르게!</div>
+        <div class="tl-card-body">히메지 명물 <strong>아나고메시(붕장어 덮밥)</strong> or 역 에키소바로 가볍게!</div>
       </div>
     </div>
     <div class="tl-item">
       <div class="tl-time-col"><div class="tl-time">15:00</div></div>
       <div class="tl-dot-col"><div class="tl-dot"></div></div>
       <div class="tl-card">
-        <div class="tl-card-head"><div class="tl-card-title">🌊 고베 · 기타노이진칸 산책</div><div class="tl-badge badge-purple">레트로 감성</div></div>
-        <div class="tl-card-body">히메지 → <strong>고베 산노미야역 약 40분</strong>. 메이지 시대 외국인 거주지 기타노이진칸은 유럽풍 건물 포토존 천국. 언덕길이니 운동화 필수!</div>
+        <div class="tl-card-head"><div class="tl-card-title">🌊 고베 기타노이진칸 산책</div><div class="tl-badge badge-purple">레트로 감성</div></div>
+        <div class="tl-card-body">히메지 → <strong>고베 산노미야역 약 40분</strong>. 메이지 시대 유럽풍 외국인 거주지 기타노이진칸. 포토스팟 천국!</div>
         <div class="tl-tips">
           <span class="tip-chip">🚶‍♀️ 운동화 필수</span>
           <span class="tip-chip">🍦 고베 스위트 카페 다수</span>
@@ -378,8 +431,8 @@
       <div class="tl-time-col"><div class="tl-time">17:30</div></div>
       <div class="tl-dot-col"><div class="tl-dot"></div></div>
       <div class="tl-card">
-        <div class="tl-card-head"><div class="tl-card-title">🌃 고베 하버랜드 저녁 + 야경</div><div class="tl-badge badge-pink">야경 명소</div></div>
-        <div class="tl-card-body">산노미야 → 하버랜드 버스 이동. <strong>일본 3대 야경</strong> 중 하나! umie 쇼핑몰에서 쇼핑 후 운하 옆 레스토랑에서 저녁. 고베 비프는 예산 맞으면 강추.</div>
+        <div class="tl-card-head"><div class="tl-card-title">🌃 고베 하버랜드 야경 + 저녁</div><div class="tl-badge badge-pink">야경 명소</div></div>
+        <div class="tl-card-body">산노미야 → 하버랜드. <strong>일본 3대 야경</strong>! umie 쇼핑 후 운하 옆 레스토랑 저녁. 고베 비프 강추.</div>
         <div class="tl-tips">
           <span class="tip-chip">🌃 야경 피크: 일몰 후 30분</span>
           <span class="tip-chip">🛍️ umie 21:00까지</span>
@@ -391,7 +444,7 @@
       <div class="tl-dot-col"><div class="tl-dot big"></div></div>
       <div class="tl-card">
         <div class="tl-card-head"><div class="tl-card-title">🏨 오사카 난바 호텔 체크인</div><div class="tl-badge badge-green">호텔 1박</div></div>
-        <div class="tl-card-body">고베 → <strong>난바역 약 30분</strong>. 3성급 호텔 체크인. 도요코 인·도미 인·APA 호텔 등 난바역 도보 5~10분 내. 체크인 후 도톤보리 야식 산책!</div>
+        <div class="tl-card-body">고베 → <strong>난바역 약 30분</strong>. 3성급 호텔 체크인. 체크인 후 도톤보리 야식 산책!</div>
         <div class="hotel-card">
           <div class="hotel-icon">🏨</div>
           <div><div class="hotel-name">난바 3★ 호텔 (1박차)</div><div class="hotel-area">도톤보리·난바역 5분 내 권장</div></div>
@@ -399,14 +452,12 @@
       </div>
     </div>
   </div>
-
   <div class="night-divider">
     <span class="night-divider-icon">🌙</span>
     <span><strong>호텔 1박</strong> — 오사카 난바 3★ 호텔</span>
   </div>
-
   <div class="food-section">
-    <div class="section-label">🍽️ DAY 2 추천 먹거리</div>
+    <div class="section-label">🍽️ 2일째 추천 먹거리</div>
     <div class="food-grid">
       <div class="food-card"><span class="food-emoji">🍱</span><div class="food-name">아나고메시</div><div class="food-loc">히메지</div></div>
       <div class="food-card"><span class="food-emoji">🥩</span><div class="food-name">고베 비프</div><div class="food-loc">하버랜드</div></div>
@@ -415,19 +466,19 @@
   </div>
 </div>
 
-<!-- DAY 3: 교토 -->
+<!-- ═══ 3일째: 교토 ═══ -->
 <div class="content" id="day2">
   <div class="day-header">
-    <div class="day-tag">DAY 3 · 7월 4일 토요일</div>
-    <div class="day-title">⛩️ 교토 풀코스<br>아라시야마 · 은각사 · 청수사</div>
+    <div class="day-tag">3일째 · 7월 4일 토요일</div>
+    <div class="day-title">⛩️ 교토 풀코스<br>아라시야마·은각사·청수사</div>
     <div class="day-desc">간사이패스 2일차! 오사카에서 교토 당일치기. 초록빛 자연과 천년 고도의 감성을 하루에.</div>
   </div>
 
   <div class="pass-banner">
     <div class="pass-icon">🎫</div>
     <div>
-      <div class="pass-title">간사이 스루 패스 2일차 · 교토 시내 지하철·버스 포함</div>
-      <div class="pass-desc">난바 → 교토 왕복 + 교토 시내 100번 버스(청수사·은각사 구간) 모두 커버</div>
+      <div class="pass-title">간사이 스루 패스 2일차</div>
+      <div class="pass-desc">난바 → 교토 왕복 + 교토 시내 100번 버스 (청수사·은각사 구간) 모두 커버</div>
     </div>
   </div>
 
@@ -444,10 +495,10 @@
       <div class="tl-time-col"><div class="tl-time">09:00</div></div>
       <div class="tl-dot-col"><div class="tl-dot"></div></div>
       <div class="tl-card">
-        <div class="tl-card-head"><div class="tl-card-title">🎋 아라시야마 · 대나무숲 · 덴류지</div><div class="tl-badge badge-green">자연</div></div>
-        <div class="tl-card-body">교토역 → JR 사가아라시야마역 20분. 대나무숲 산책 → 덴류지 정원 → 도게츠교 다리. <strong>오전 8~9시 인파 최소</strong>. 덴류지 앞 아침 두부요리도 특별한 경험.</div>
+        <div class="tl-card-head"><div class="tl-card-title">🎋 아라시야마 · 대나무숲</div><div class="tl-badge badge-green">자연</div></div>
+        <div class="tl-card-body">교토역 → JR 사가아라시야마역 20분. 대나무숲 → 덴류지 정원 → 도게츠교 다리. <strong>오전 8~9시가 인파 최소!</strong></div>
         <div class="tl-tips">
-          <span class="tip-chip">⏰ 오전이 인파 적음</span>
+          <span class="tip-chip">⏰ 오전일수록 한적함</span>
           <span class="tip-chip">📸 역광 조심, 오전이 예쁨</span>
         </div>
       </div>
@@ -457,7 +508,7 @@
       <div class="tl-dot-col"><div class="tl-dot"></div></div>
       <div class="tl-card">
         <div class="tl-card-head"><div class="tl-card-title">🍱 점심 · 아라시야마 유도후</div><div class="tl-badge badge-orange">맛집</div></div>
-        <div class="tl-card-body">아라시야마 메인거리의 <strong>유도후(두부요리) 정식</strong> or 요시무라 소바. 덴류지 앞 도시락 테이크아웃도 가성비 굿.</div>
+        <div class="tl-card-body"><strong>유도후(두부요리) 정식</strong> or 요시무라 소바. 덴류지 앞 도시락 테이크아웃도 가성비 굿.</div>
       </div>
     </div>
     <div class="tl-item">
@@ -465,7 +516,7 @@
       <div class="tl-dot-col"><div class="tl-dot"></div></div>
       <div class="tl-card">
         <div class="tl-card-head"><div class="tl-card-title">🏛️ 은각사 · 철학의 길</div><div class="tl-badge badge-purple">세계유산</div></div>
-        <div class="tl-card-body">아라시야마 → 은각사 버스 이동. <strong>철학의 길 약 2km</strong> 산책하며 헤이안 신궁까지. 석등롱이 이어지는 교토 감성 최고 구간.</div>
+        <div class="tl-card-body">아라시야마 → 은각사 버스 이동. <strong>철학의 길 약 2km</strong> 산책하며 헤이안 신궁까지. 교토 감성 최고 구간!</div>
         <div class="tl-tips">
           <span class="tip-chip">🎟️ 입장료 500엔</span>
           <span class="tip-chip">🚶‍♀️ 철학의 길 약 2km</span>
@@ -477,7 +528,7 @@
       <div class="tl-dot-col"><div class="tl-dot"></div></div>
       <div class="tl-card">
         <div class="tl-card-head"><div class="tl-card-title">🏯 청수사 · 산넨자카 · 기온</div><div class="tl-badge badge-yellow">황금시간대</div></div>
-        <div class="tl-card-body">버스 100번 → 청수도미마에. <strong>오후 4~5시 황금빛 교토 전망</strong>이 압도적. 산넨자카·니넨자카 기념품 골목 → 기온 하나미코지 저녁 산책.</div>
+        <div class="tl-card-body">버스 100번 → 청수도미마에. <strong>오후 4~5시 황금빛 교토 전망</strong>이 압도적. 산넨자카 기념품 골목 → 기온 하나미코지 저녁 산책.</div>
         <div class="tl-tips">
           <span class="tip-chip">🎟️ 입장료 400엔</span>
           <span class="tip-chip">🧧 말차 과자 쇼핑</span>
@@ -490,22 +541,20 @@
       <div class="tl-dot-col"><div class="tl-dot big"></div></div>
       <div class="tl-card">
         <div class="tl-card-head"><div class="tl-card-title">🚃 난바 귀환 · 호텔 2박차</div><div class="tl-badge badge-green">호텔 2박</div></div>
-        <div class="tl-card-body">교토역 → <strong>난바 약 1시간</strong>. 숙소 복귀 후 체력 남으면 아메리카무라 야간 쇼핑 or 도톤보리 2차 탐방!</div>
+        <div class="tl-card-body">교토역 → <strong>난바 약 1시간</strong>. 체력 남으면 아메리카무라 야간 쇼핑 or 도톤보리 2차 탐방!</div>
         <div class="hotel-card">
           <div class="hotel-icon">🏨</div>
-          <div><div class="hotel-name">난바 3★ 호텔 (2박차)</div><div class="hotel-area">동일 호텔 연박 추천 — 체크아웃 없이 편리</div></div>
+          <div><div class="hotel-name">난바 3★ 호텔 (2박차)</div><div class="hotel-area">동일 호텔 연박 추천 — 편리함 최고</div></div>
         </div>
       </div>
     </div>
   </div>
-
   <div class="night-divider">
     <span class="night-divider-icon">🌙</span>
     <span><strong>호텔 2박</strong> — 오사카 난바 3★ 호텔</span>
   </div>
-
   <div class="food-section">
-    <div class="section-label">🍽️ DAY 3 추천 먹거리</div>
+    <div class="section-label">🍽️ 3일째 추천 먹거리</div>
     <div class="food-grid">
       <div class="food-card"><span class="food-emoji">🥢</span><div class="food-name">유도후 정식</div><div class="food-loc">아라시야마</div></div>
       <div class="food-card"><span class="food-emoji">🍵</span><div class="food-name">말차 파르페</div><div class="food-loc">기온</div></div>
@@ -514,19 +563,19 @@
   </div>
 </div>
 
-<!-- DAY 4: 오사카 주유패스 -->
+<!-- ═══ 4일째: 오사카 주유패스 ═══ -->
 <div class="content" id="day3">
   <div class="day-header">
-    <div class="day-tag">DAY 4 · 7월 5일 일요일</div>
+    <div class="day-tag">4일째 · 7월 5일 일요일</div>
     <div class="day-title">🎡 오사카 주유패스<br>관광지 40곳 무료입장!</div>
-    <div class="day-desc">오사카 주유패스 1일권으로 오사카성·우메다 스카이빌딩·HEP FIVE·도톤보리 크루즈까지 전부 무료! 가성비 최강의 하루.</div>
+    <div class="day-desc">오사카 주유패스 1일권으로 오사카성·우메다 스카이빌딩·HEP FIVE·도톤보리 크루즈까지 전부 무료!</div>
   </div>
 
   <div class="pass-banner">
     <div class="pass-icon">🎡</div>
     <div>
-      <div class="pass-title">오사카 주유패스 1일권 — 지하철 무제한 + 40여 곳 무료입장</div>
-      <div class="pass-desc">오사카성·우메다 스카이빌딩·HEP FIVE·도톤보리 크루즈 등 원가로 사면 ¥12,000+ 상당의 혜택</div>
+      <div class="pass-title">오사카 주유패스 1일권</div>
+      <div class="pass-desc">지하철 무제한 + 40여 곳 무료입장 · 원가로 사면 ¥12,000+ 상당의 혜택</div>
     </div>
   </div>
 
@@ -536,7 +585,7 @@
       <div class="tl-dot-col"><div class="tl-dot big"></div></div>
       <div class="tl-card">
         <div class="tl-card-head"><div class="tl-card-title">🏯 오사카성 · 천수각 전망</div><div class="tl-badge badge-yellow">무료입장</div></div>
-        <div class="tl-card-body"><strong>주유패스로 천수각 무료 (원가 ¥600)</strong>. 5층 전망대에서 오사카 파노라마 뷰. 여름엔 아침 일찍 가야 더위를 피할 수 있음!</div>
+        <div class="tl-card-body"><strong>주유패스로 천수각 무료 (원가 ¥600)</strong>. 5층 전망대에서 오사카 파노라마! 여름엔 아침 일찍 가야 더위를 피할 수 있음.</div>
         <div class="tl-tips"><span class="tip-chip">☀️ 자외선 차단제 필수</span><span class="tip-chip">⏰ 9시 개장 맞춰 go</span></div>
       </div>
     </div>
@@ -545,7 +594,7 @@
       <div class="tl-dot-col"><div class="tl-dot"></div></div>
       <div class="tl-card">
         <div class="tl-card-head"><div class="tl-card-title">🌆 우메다 스카이빌딩 공중정원</div><div class="tl-badge badge-purple">무료입장</div></div>
-        <div class="tl-card-body"><strong>주유패스로 무료 (원가 ¥1,500)</strong>. 두 동 빌딩을 잇는 공중 에스컬레이터 타고 360도 오사카 전망. 우메다 쇼핑가도 바로 연결.</div>
+        <div class="tl-card-body"><strong>주유패스로 무료 (원가 ¥1,500)</strong>. 두 동 빌딩을 잇는 공중 에스컬레이터 타고 360도 오사카 전망.</div>
       </div>
     </div>
     <div class="tl-item">
@@ -553,7 +602,7 @@
       <div class="tl-dot-col"><div class="tl-dot"></div></div>
       <div class="tl-card">
         <div class="tl-card-head"><div class="tl-card-title">🍣 점심 · 우메다 맛집 탐방</div><div class="tl-badge badge-orange">맛집</div></div>
-        <div class="tl-card-body">우메다 지하 <strong>화이티 우메다</strong> 푸드코트 or 회전초밥. 오사카역 다이마루 지하 식품관 둘러보는 것도 재미.</div>
+        <div class="tl-card-body">우메다 지하 <strong>화이티 우메다</strong> 푸드코트 or 회전초밥. 다이마루 지하 식품관도 추천.</div>
       </div>
     </div>
     <div class="tl-item">
@@ -561,7 +610,7 @@
       <div class="tl-dot-col"><div class="tl-dot"></div></div>
       <div class="tl-card">
         <div class="tl-card-head"><div class="tl-card-title">🎡 HEP FIVE 빨간 관람차</div><div class="tl-badge badge-pink">무료입장</div></div>
-        <div class="tl-card-body">우메다의 상징 빨간 관람차. <strong>주유패스로 무료 (원가 ¥600)</strong>. 우메다 빌딩 숲 위를 천천히 돌며 오사카 도심 전망 만끽.</div>
+        <div class="tl-card-body">우메다의 상징 빨간 관람차. <strong>주유패스로 무료 (원가 ¥600)</strong>. 우메다 빌딩 숲 위를 천천히 돌며 도심 전망.</div>
       </div>
     </div>
     <div class="tl-item">
@@ -569,7 +618,7 @@
       <div class="tl-dot-col"><div class="tl-dot"></div></div>
       <div class="tl-card">
         <div class="tl-card-head"><div class="tl-card-title">🎮 신사이바시 · 아메리카무라</div><div class="tl-badge badge-cyan">쇼핑</div></div>
-        <div class="tl-card-body">오사카 젊은이 문화의 핵심 <strong>아메무라</strong>! 빈티지 패션·스트리트웨어·중고 음반·감각적인 카페. 트렌디한 로컬 브랜드 쇼핑 타임.</div>
+        <div class="tl-card-body">오사카 젊은이 문화의 핵심 <strong>아메무라</strong>! 빈티지 패션·스트리트웨어·중고 음반. 트렌디한 로컬 브랜드 쇼핑 타임.</div>
         <div class="tl-tips">
           <span class="tip-chip">🛍️ 빈티지샵 밀집</span>
           <span class="tip-chip">☕ 감성 카페 쉬어가기</span>
@@ -580,8 +629,8 @@
       <div class="tl-time-col"><div class="tl-time">18:00</div></div>
       <div class="tl-dot-col"><div class="tl-dot"></div></div>
       <div class="tl-card">
-        <div class="tl-card-head"><div class="tl-card-title">🦀 쿠로몬 시장 저녁 + 도톤보리 크루즈</div><div class="tl-badge badge-orange">맛집 + 무료</div></div>
-        <div class="tl-card-body">오사카 부엌 <strong>쿠로몬 이치바</strong>에서 신선 해산물 구워 먹기. 이후 도톤보리 크루즈 <strong>(주유패스 무료)</strong>. 강 위에서 네온사인 야경 감상.</div>
+        <div class="tl-card-head"><div class="tl-card-title">🦀 쿠로몬 시장 + 도톤보리 크루즈</div><div class="tl-badge badge-orange">무료 포함</div></div>
+        <div class="tl-card-body"><strong>쿠로몬 이치바</strong>에서 신선 해산물 구워 먹기. 도톤보리 크루즈는 <strong>주유패스로 무료</strong>. 강 위에서 네온사인 야경 감상!</div>
         <div class="tl-tips"><span class="tip-chip">🚣 크루즈 주유패스 무료</span></div>
       </div>
     </div>
@@ -598,14 +647,12 @@
       </div>
     </div>
   </div>
-
   <div class="night-divider">
     <span class="night-divider-icon">🌙</span>
     <span><strong>호텔 3박</strong> — 오사카 난바 3★ 호텔</span>
   </div>
-
   <div class="food-section">
-    <div class="section-label">🍽️ DAY 4 추천 먹거리</div>
+    <div class="section-label">🍽️ 4일째 추천 먹거리</div>
     <div class="food-grid">
       <div class="food-card"><span class="food-emoji">🦪</span><div class="food-name">쿠로몬 굴구이</div><div class="food-loc">쿠로몬 시장</div></div>
       <div class="food-card"><span class="food-emoji">🍡</span><div class="food-name">쿠시카츠</div><div class="food-loc">도톤보리</div></div>
@@ -614,12 +661,12 @@
   </div>
 </div>
 
-<!-- DAY 5: 귀국 크루즈 -->
+<!-- ═══ 5일째: 귀국 크루즈 ═══ -->
 <div class="content" id="day4">
   <div class="day-header">
-    <div class="day-tag cruise-tag">DAY 5 · 7월 6일 월요일</div>
-    <div class="day-title">🚢 난바 마지막 산책<br>팬스타 크루즈로 귀국 1박!</div>
-    <div class="day-desc">오전에 난바를 여유롭게 즐기고, 오후 오사카항에서 팬스타 미라클호로 승선. 바다 위에서 보내는 마지막 낭만적인 밤!</div>
+    <div class="day-tag cruise-tag">5일째 · 7월 6일 월요일</div>
+    <div class="day-title">🚢 난바 마지막 산책<br>팬스타 크루즈로 귀국!</div>
+    <div class="day-desc">오전 난바를 여유롭게 즐기고, 오후 오사카항에서 팬스타 미라클호 승선. 바다 위에서 보내는 마지막 낭만적인 밤!</div>
   </div>
 
   <div class="cruise-banner">
@@ -627,7 +674,7 @@
       <div class="cruise-icon-big">🚢</div>
       <div>
         <div class="cruise-name">팬스타 미라클호 귀국편</div>
-        <div class="cruise-route">오사카항 → 부산항 · 월요일 17:00 출항 · 익일 아침 부산 도착</div>
+        <div class="cruise-route">오사카항 → 부산항<br>월요일 17:00 출항 · 익일 아침 부산 도착</div>
       </div>
     </div>
     <div class="cruise-amenities">
@@ -651,8 +698,8 @@
       <div class="tl-time-col"><div class="tl-time">09:00</div></div>
       <div class="tl-dot-col"><div class="tl-dot"></div></div>
       <div class="tl-card">
-        <div class="tl-card-head"><div class="tl-card-title">🛍️ 돈키호테 · 드럭스토어 마지막 쇼핑</div><div class="tl-badge badge-orange">쇼핑</div></div>
-        <div class="tl-card-body"><strong>돈키호테 난바점</strong>(24시간) 기념품·과자·화장품 마지막 구매. 마쓰모토키요시 드럭스토어에서 DHC·코세 면세 구매. <strong>수하물 무게 주의!</strong></div>
+        <div class="tl-card-head"><div class="tl-card-title">🛍️ 돈키호테 · 드럭스토어 쇼핑</div><div class="tl-badge badge-orange">쇼핑</div></div>
+        <div class="tl-card-body"><strong>돈키호테 난바점</strong>(24시간) 기념품·과자·화장품 마지막 구매. 마쓰모토키요시에서 면세 구매. <strong>수하물 무게 주의!</strong></div>
         <div class="tl-tips">
           <span class="tip-chip">🧴 화장품 면세 챙기기</span>
           <span class="tip-chip">🍬 과자는 도심이 저렴</span>
@@ -664,8 +711,8 @@
       <div class="tl-time-col"><div class="tl-time">11:00</div></div>
       <div class="tl-dot-col"><div class="tl-dot"></div></div>
       <div class="tl-card">
-        <div class="tl-card-head"><div class="tl-card-title">🏮 호젠지 요코초 · 미도스지 산책</div><div class="tl-badge badge-purple">감성</div></div>
-        <div class="tl-card-body">난바역 도보 5분. 이끼낀 불상으로 유명한 <strong>호젠지 요코초</strong> 골목. 오래된 오사카 정서가 고스란히. 미도스지 대로도 가볍게 걷기.</div>
+        <div class="tl-card-head"><div class="tl-card-title">🏮 호젠지 요코초 마지막 산책</div><div class="tl-badge badge-purple">감성</div></div>
+        <div class="tl-card-body">난바역 도보 5분. 이끼낀 불상의 <strong>호젠지 요코초</strong>. 오래된 오사카 정서가 고스란히 남아있는 포토존.</div>
       </div>
     </div>
     <div class="tl-item">
@@ -673,7 +720,7 @@
       <div class="tl-dot-col"><div class="tl-dot"></div></div>
       <div class="tl-card">
         <div class="tl-card-head"><div class="tl-card-title">🍜 오사카 마지막 점심</div><div class="tl-badge badge-orange">맛집</div></div>
-        <div class="tl-card-body">오사카를 마지막으로 입에 담는 한 그릇! 닭뼈 기반 오사카 라멘 or 오코노미야키. 배 안에서 먹을 <strong>에키벤(역 도시락)</strong>도 미리 구매.</div>
+        <div class="tl-card-body">오사카를 마지막으로 입에 담는 한 그릇! 오사카 라멘 or 오코노미야키. 배 안에서 먹을 <strong>에키벤(역 도시락)</strong>도 미리 구매.</div>
       </div>
     </div>
     <div class="tl-item">
@@ -681,7 +728,7 @@
       <div class="tl-dot-col"><div class="tl-dot big"></div></div>
       <div class="tl-card">
         <div class="tl-card-head"><div class="tl-card-title">🚇 난바 → 오사카항 이동</div><div class="tl-badge badge-cyan">이동</div></div>
-        <div class="tl-card-body">호텔에서 짐 찾은 뒤 <strong>지하철 추오선 → 오사카코역</strong>까지 약 20분. 수화물 수속 15:00~16:00, 출국 수속 16:00~16:30.</div>
+        <div class="tl-card-body">호텔 짐 찾은 뒤 <strong>지하철 추오선 → 오사카코역</strong> 약 20분. 수화물 수속 15:00~16:00, 출국 수속 16:00~16:30.</div>
         <div class="tl-tips">
           <span class="tip-chip">🚇 추오선 직통 약 20분</span>
           <span class="tip-chip">💳 면세 환급 챙기기</span>
@@ -693,7 +740,7 @@
       <div class="tl-time-col"><div class="tl-time cruise-time">16:00</div></div>
       <div class="tl-dot-col"><div class="tl-dot cruise"></div></div>
       <div class="tl-card cruise-card">
-        <div class="tl-card-head"><div class="tl-card-title">🛳️ 출국 수속 · 팬스타 미라클호 승선</div><div class="tl-badge badge-navy">귀국 승선</div></div>
+        <div class="tl-card-head"><div class="tl-card-title">🛳️ 출국 수속 · 미라클호 승선</div><div class="tl-badge badge-navy">귀국 승선</div></div>
         <div class="tl-card-body">오사카항 국제터미널 출국 수속 후 승선 완료. 갑판에서 오사카 항구 마지막 뷰 감상. 석양을 배경으로 인생샷!</div>
       </div>
     </div>
@@ -710,21 +757,112 @@
       <div class="tl-dot-col"><div class="tl-dot cruise big"></div></div>
       <div class="tl-card cruise-card">
         <div class="tl-card-head"><div class="tl-card-title">🌟 현해탄 야경 · 마지막 선상 밤</div><div class="tl-badge badge-navy">선상 2박</div></div>
-        <div class="tl-card-body">라운지에서 칵테일 한 잔, 갑판에서 별 감상, 사우나로 여행 피로 해소. 여행의 여운을 바다 위에서 천천히 마무리.</div>
+        <div class="tl-card-body">라운지 칵테일, 갑판에서 별 감상, 사우나로 여행 피로 해소. 바다 위에서 천천히 여행의 여운 마무리.</div>
+      </div>
+    </div>
+  </div>
+  <div class="night-divider">
+    <span class="night-divider-icon">🌊</span>
+    <span><strong>선상 2박</strong> — 팬스타 미라클호 객실 (석식 · 조식 포함)</span>
+  </div>
+</div>
+
+<!-- ═══ 6일째: 부산 귀항 · 해산 ═══ -->
+<div class="content" id="day5">
+  <div class="day-header">
+    <div class="day-tag" style="color: var(--accent2);">6일째 · 7월 7일 화요일</div>
+    <div class="day-title">🎉 부산 귀항<br>5박 6일 대장정 완료!</div>
+    <div class="day-desc">선상 조식을 마지막으로 즐기고 부산항에 귀환. 아쉬운 작별 인사와 함께 각자의 집으로 해산!</div>
+  </div>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-time-col"><div class="tl-time cruise-time">07:00</div></div>
+      <div class="tl-dot-col"><div class="tl-dot cruise"></div></div>
+      <div class="tl-card cruise-card">
+        <div class="tl-card-head"><div class="tl-card-title">☀️ 선상 마지막 조식 뷔페</div><div class="tl-badge badge-green">포함</div></div>
+        <div class="tl-card-body">승선권 포함 <strong>조식 뷔페</strong>로 마지막 선상 식사. 갑판에 나와 부산이 가까워지는 풍경 보며 여행의 여운 만끽.</div>
+        <div class="tl-tips">
+          <span class="tip-chip">📱 여행 사진 정리하기</span>
+          <span class="tip-chip">🎒 객실 짐 미리 챙기기</span>
+        </div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time-col"><div class="tl-time cruise-time">08:30</div></div>
+      <div class="tl-dot-col"><div class="tl-dot cruise"></div></div>
+      <div class="tl-card cruise-card">
+        <div class="tl-card-head"><div class="tl-card-title">🌊 부산항 입항 · 하선 준비</div><div class="tl-badge badge-navy">귀항</div></div>
+        <div class="tl-card-body">갑판에서 부산항 전경 감상. 광안대교와 부산 스카이라인이 반겨준다! 하선 안내방송 따라 입국 수속 대기.</div>
+        <div class="tl-tips">
+          <span class="tip-chip">🛂 여권 꺼내 준비</span>
+          <span class="tip-chip">🛄 수하물 찾기 대기</span>
+        </div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time-col"><div class="tl-time">09:30</div></div>
+      <div class="tl-dot-col"><div class="tl-dot gold big"></div></div>
+      <div class="tl-card gold-card">
+        <div class="tl-card-head"><div class="tl-card-title">⚓ 부산 국제여객터미널 상륙!</div><div class="tl-badge badge-gold">귀국 완료</div></div>
+        <div class="tl-card-body">입국 심사 후 수화물 찾기. <strong>부산 국제여객터미널</strong> 3층 로비에서 짐 정리. 일본 면세품 수령도 잊지 말 것!</div>
+        <div class="tl-tips">
+          <span class="tip-chip">🛃 입국 신고서 작성</span>
+          <span class="tip-chip">🧳 면세품 수령 확인</span>
+        </div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time-col"><div class="tl-time">10:00</div></div>
+      <div class="tl-dot-col"><div class="tl-dot gold"></div></div>
+      <div class="tl-card gold-card">
+        <div class="tl-card-head"><div class="tl-card-title">🚇 부산역 or 집으로 이동</div><div class="tl-badge badge-gold">이동</div></div>
+        <div class="tl-card-body">부산 국제여객터미널 → <strong>부산역 버스 or 택시 약 10~15분</strong>. KTX·SRT 이용 시 부산역에서 탑승. 타지에서 온 멤버는 각자 귀향 루트로!</div>
+        <div class="tl-tips">
+          <span class="tip-chip">🚌 터미널↔부산역 버스 운행</span>
+          <span class="tip-chip">🚕 택시 약 10분</span>
+          <span class="tip-chip">🚄 KTX 부산역 탑승</span>
+        </div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time-col"><div class="tl-time">10:30</div></div>
+      <div class="tl-dot-col"><div class="tl-dot gold"></div></div>
+      <div class="tl-card gold-card">
+        <div class="tl-card-head"><div class="tl-card-title">🍜 귀국 기념 국밥 한 그릇!</div><div class="tl-badge badge-orange">선택</div></div>
+        <div class="tl-card-body">일본 음식도 좋았지만 역시 한국이지! 부산 국제시장 주변 <strong>돼지국밥·밀면·어묵</strong>으로 귀국 인증. 마지막 단체 식사로도 딱.</div>
+        <div class="tl-tips">
+          <span class="tip-chip">🍖 신창국밥·포항집 추천</span>
+          <span class="tip-chip">🍜 밀면도 부산 명물</span>
+        </div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time-col"><div class="tl-time">12:00</div></div>
+      <div class="tl-dot-col"><div class="tl-dot gold big"></div></div>
+      <div class="tl-card gold-card">
+        <div class="tl-card-head"><div class="tl-card-title">👋 부산역 앞 공식 해산!</div><div class="tl-badge badge-gold">해산</div></div>
+        <div class="tl-card-body">부산역 광장에서 단체 마지막 인증샷! <strong>5박 6일 간사이 완전 정복</strong> 기념 사진 남기고 각자 귀가. 수고했어, 진짜 잘 다녀왔다! 🎉</div>
+        <div class="tl-tips">
+          <span class="tip-chip">📸 단체 마지막 인증샷</span>
+          <span class="tip-chip">🚄 KTX·SRT 탑승</span>
+          <span class="tip-chip">🚌 고속버스 터미널 이동</span>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="night-divider">
-    <span class="night-divider-icon">🌊</span>
-    <span><strong>선상 2박</strong> — 팬스타 미라클호 객실 (석식 · 조식 포함) → 7/7 화요일 부산 귀항 🎉</span>
-  </div>
-
-  <div class="pass-banner" style="margin-top:16px; background: linear-gradient(135deg, rgba(255,107,53,0.1), rgba(255,215,0,0.05)); border-color: rgba(255,107,53,0.25);">
-    <div class="pass-icon">🏠</div>
-    <div>
-      <div class="pass-title" style="color: var(--accent1)">7월 7일 화요일 — 부산항 귀항</div>
-      <div class="pass-desc">선상 조식 후 부산 국제여객터미널 도착 · 5박 6일 간사이 완전 정복 완료!</div>
+  <div class="final-card">
+    <span class="final-emoji">🎊</span>
+    <div class="final-title">5박 6일 완전 정복!</div>
+    <div class="final-desc">
+      1일째 부산 출항 → 크루즈 1박<br>
+      2일째 히메지 · 고베<br>
+      3일째 교토<br>
+      4일째 오사카 주유패스<br>
+      5일째 귀국 크루즈 1박<br>
+      6일째 부산 귀항 · 해산 🎉<br><br>
+      <strong style="color: var(--accent2);">수고했어, 진짜 좋은 여행이었다! 🇯🇵✨</strong>
     </div>
   </div>
 </div>
